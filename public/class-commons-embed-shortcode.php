@@ -4,9 +4,8 @@ namespace Commons_Embed;
 
 class Article_Shortcode {
 
-  public function commons_create_shortcode( $args ) {
+  public function article_create_shortcode( $args ) {
     $atts = shortcode_atts( array(
-      'type' => 'article',
       'post_id' => '',
       'post_site' => '',
       'loader_url' => ''
@@ -21,7 +20,7 @@ class Article_Shortcode {
     return $html;
   }
 
-  function commons_add_shortcode() {
-    add_shortcode( 'commons-embed', array( $this, 'commons_create_shortcode' ) );
+  function article_add_shortcode() {
+    add_shortcode( 'commons-article', array( $this, 'article_create_shortcode' ) );
   }
 }
