@@ -74,7 +74,7 @@ class IIP_Commons_Embed {
   //   $plugin_admin = new Commons_Embed\Admin( $this->get_plugin_name(), $this->get_version() );
 
   //   // Admin hooks
-  //   $this->loader->add_action( 'admin_init', $plugin_admin, 'iip_map_settings_sections' );
+  //   $this->loader->add_action( 'admin_init', $plugin_admin, 'commons_embed_settings_sections' );
   // }
 
   // Register all of the hooks related to the public-facing functionality

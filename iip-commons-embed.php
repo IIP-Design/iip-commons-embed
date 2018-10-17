@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: IIP Commons Embed
- * Description: Adds ability to embed a Google map onto a WordPress site
+ * Description: Adds ability to embed content from the IIP Content Commons onto a WordPress site
  * Version: 0.0.1
  * Author: Marek Rewers
  * Text Domain: iip-commons-embed
@@ -17,18 +17,18 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'COMMONS_EMBED_DIR', plugin_dir_path( dirname( __FILE__ ) ) . 'iip-commons-embed/' );
 define( 'COMMONS_EMBED_URL', plugin_dir_url( dirname( __FILE__ ) ) . 'iip-commons-embed/' );
 
-// function iip_map_activate() {
-// 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-iip-map-activator.php';
-// 	IIP_Map_Activator::activate();
+// function commons_embed_activate() {
+// 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-commons-embed-activator.php';
+// 	Commons_Embed_Activator::activate();
 // }
-// register_activation_hook( __FILE__, 'iip_map_activate' );
+// register_activation_hook( __FILE__, 'commons_embed_activate' );
 
 
-// function iip_map_deactivate() {
-// 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-iip-map-deactivator.php';
-// 	IIP_Map_Deactivator::deactivate();
+// function commons_embed_deactivate() {
+// 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-commons-embed-deactivator.php';
+// 	Commons_Embed_Deactivator::deactivate();
 // }
-// register_deactivation_hook( __FILE__, 'iip_map_deactivate' );
+// register_deactivation_hook( __FILE__, 'commons_embed_deactivate' );
 
 require plugin_dir_path( __FILE__ ) . 'includes/class-commons-embed.php';
 
