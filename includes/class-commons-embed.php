@@ -36,7 +36,7 @@ class IIP_Commons_Embed {
     $this->version = '0.0.1';
 
     $this->load_dependencies();
-    // $this->define_admin_hooks();
+    $this->define_admin_hooks();
     $this->define_public_hooks();
   }
 
@@ -61,7 +61,7 @@ class IIP_Commons_Embed {
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-commons-embed-loader.php';
 
     // The class responsible for defining all actions that occur in the admin area.
-    // require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-commons-embed-admin.php';
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-commons-embed-admin.php';
 
     // The class responsible for defining all actions that occur in the public-facing side of the site.
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-commons-embed-shortcode.php';
@@ -70,18 +70,19 @@ class IIP_Commons_Embed {
   }
 
   // Register all of the hooks related to the admin area functionality of the plugin.
-  // private function define_admin_hooks() {
-  //   $plugin_admin = new Commons_Embed\Admin( $this->get_plugin_name(), $this->get_version() );
+  private function define_admin_hooks() {
+    $plugin_admin = new Commons_Embed\Admin( $this->get_plugin_name(), $this->get_version() );
 
-  //   // Admin hooks
-  //   $this->loader->add_action( 'admin_init', $plugin_admin, 'commons_embed_settings_sections' );
-  // }
+    // Admin hooks
+    $this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_commons_metabox' );
+    $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_commons_embed_admin' );
+  }
 
   // Register all of the hooks related to the public-facing functionality
   private function define_public_hooks() {
     $plugin_shortcode = new Commons_Embed\Article_Shortcode( $this->get_plugin_name(), $this->get_version() );
 
-    $this->loader->add_action( 'init', $plugin_shortcode, 'commons_add_shortcode' );
+    $this->loader->add_action( 'init', $plugin_shortcode, 'article_add_shortcode' );
   }
 
   /**

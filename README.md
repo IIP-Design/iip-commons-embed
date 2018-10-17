@@ -6,9 +6,8 @@ Converts the HTML embed code from the IIP [Content Commons](https://commons.amer
 
 ## Shortcode Parameters
 
-| Parameter  | Accepted Value           | Description                  |
-|------------|--------------------------|------------------------------|
-| type       | `article`                | embed content type           |
-| post_id    | source post id - string  | ID of source post            |
-| post_site  | post site - string       | URL of source site           |
-| loader_url | URL loader file - string | S3 bucket url fo loader file |
+| Parameter  | Accepted Value           | Description                   |
+|------------|--------------------------|-------------------------------|
+| post_id    | source post id - string  | ID of source post             |
+| post_site  | post site - string       | URL of source site            |
+| loader_url | URL loader file - string | S3 bucket URL for loader file |
