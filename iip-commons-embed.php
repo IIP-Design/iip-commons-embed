@@ -17,19 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'COMMONS_EMBED_DIR', plugin_dir_path( dirname( __FILE__ ) ) . 'iip-commons-embed/' );
 define( 'COMMONS_EMBED_URL', plugin_dir_url( dirname( __FILE__ ) ) . 'iip-commons-embed/' );
 
-// function commons_embed_activate() {
-// 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-commons-embed-activator.php';
-// 	Commons_Embed_Activator::activate();
-// }
-// register_activation_hook( __FILE__, 'commons_embed_activate' );
-
-
-// function commons_embed_deactivate() {
-// 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-commons-embed-deactivator.php';
-// 	Commons_Embed_Deactivator::deactivate();
-// }
-// register_deactivation_hook( __FILE__, 'commons_embed_deactivate' );
-
+// Imports IIP_Commons_Embed class
 require plugin_dir_path( __FILE__ ) . 'includes/class-commons-embed.php';
 
 /* Begin execution of the plugin.
