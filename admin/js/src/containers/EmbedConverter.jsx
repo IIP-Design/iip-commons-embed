@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import EmbedCodeInput from '../components/EmbedCodeInput';
 import ShortcodeOutput from '../components/ShortcodeOutput';
-import ConvertButton from '../components/ConvertButton';
-import ClearButton from '../components/ClearButton';
+import ConvertButton from '../components/Buttons/ConvertButton';
+import ClearButton from '../components/Buttons/ClearButton';
+import CopyButton from '../components/Buttons/CopyButton';
 
 import { parseEmbedCode } from '../utils/article-converter';
 
@@ -51,6 +52,7 @@ class EmbedConverter extends Component {
         <EmbedCodeInput callback={ this.handleChange } input={ input } />
         <div className="iipce-embed-button-container">
           <ConvertButton callback={ this.parseInput } input={ input } />
+          <CopyButton />
           <ClearButton callback={ this.resetFields } />
         </div>
         <ShortcodeOutput output={ output } />

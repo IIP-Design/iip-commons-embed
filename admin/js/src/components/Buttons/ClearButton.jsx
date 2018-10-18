@@ -2,7 +2,7 @@ import React from 'react';
 import { func } from 'prop-types';
 
 const ClearButton = ( { callback } ) => (
-  <button className="button iipce-Clear-button" onClick={ () => callback() } type="button">
+  <button className="button" id="iipce-clear-button" onClick={ () => callback() } type="button">
     Clear Inputs
   </button>
 );
