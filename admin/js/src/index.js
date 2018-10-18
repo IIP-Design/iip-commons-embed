@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import CommonsEmbedConverter from './containers/CommonsEmbedConverter';
+import EmbedConverter from './containers/EmbedConverter';
 
 import './commons-embed-admin.css';
 
 ReactDOM.render(
-  <CommonsEmbedConverter />,
+  <EmbedConverter />,
   document.getElementById( 'iip-commons-embed-admin' )
 );
 
