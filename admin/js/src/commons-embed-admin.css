@@ -1,0 +1,38 @@
+.iipce-embed-converter {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.iipce-embed-input,
+.iipce-shortcode-output {
+  flex-basis: 44%;
+  margin: 1em;
+}
+
+.iipce-text-input,
+.iipce-shortcode-text {
+  margin: 1em 0;
+  min-height: 100px;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.iipce-shortcode-text {
+  background-color: #F1F1F1;
+  font-family: monospace;
+}
+
+.iipce-embed-button-container {
+  align-self: center;
+  display: flex;
+  flex-basis: 12%;
+  flex-flow: column;
+  margin: 1em;
+}
+
+#iipce-clear-button,
+#iipce-copy-button {
+  margin-top: 1em;
+}
