@@ -4,5 +4,8 @@
 node_modules/
 npm-debug.log*
 
+# dev build
+admin/js/dist/commons-embed-admin.js
+
 # misc
 .DS_Store

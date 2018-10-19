@@ -6,7 +6,7 @@ class Admin {
 
   public function enqueue_commons_embed_admin() {
     
-    wp_enqueue_script( 'commons-embed-admin-js', COMMONS_EMBED_URL . 'admin/js/dist/commons-embed-admin.js', array(), null, true );
+    wp_enqueue_script( 'commons-embed-admin-js', COMMONS_EMBED_URL . 'admin/js/dist/commons-embed-admin.min.js', array(), null, true );
   }
   
   public function add_commons_metabox() {
