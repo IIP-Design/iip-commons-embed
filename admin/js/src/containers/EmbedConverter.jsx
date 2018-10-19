@@ -16,9 +16,28 @@ class EmbedConverter extends Component {
       output: '[]'
     };
 
+    this.setCopyButton = this.setCopyButton.bind( this );
+    this.setClearButton = this.setClearButton.bind( this );
     this.handleChange = this.handleChange.bind( this );
     this.parseInput = this.parseInput.bind( this );
     this.resetFields = this.resetFields.bind( this );
+  }
+
+  setCopyButton() {
+    const { output } = this.state;
+
+    return (
+      output === '[]'
+      || output === 'Sorry, the embed code you entered does not appear to be valid'
+    );
+  }
+
+  setClearButton() {
+    const { output } = this.state;
+
+    return (
+      output === '[]'
+    );
   }
 
   handleChange( e ) {
@@ -52,8 +71,8 @@ class EmbedConverter extends Component {
         <EmbedCodeInput callback={ this.handleChange } input={ input } />
         <div className="iipce-embed-button-container">
           <ConvertButton callback={ this.parseInput } input={ input } />
-          <CopyButton />
-          <ClearButton callback={ this.resetFields } />
+          <CopyButton setButton={ this.setCopyButton } />
+          <ClearButton callback={ this.resetFields } setButton={ this.setClearButton } />
         </div>
         <ShortcodeOutput output={ output } />
       </div>
