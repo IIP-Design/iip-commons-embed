@@ -2,7 +2,7 @@
 /**
  * Plugin Name: IIP Commons Embed
  * Description: Adds ability to embed content from the IIP Content Commons onto a WordPress site
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Marek Rewers
  * Text Domain: iip-commons-embed
  * License: GPLv2 or laters

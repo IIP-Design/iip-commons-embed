@@ -10,50 +10,24 @@ export const getEmbedType = ( input ) => {
   return type;
 };
 
-export const getEmbedPostId = ( input ) => {
-  let postId = null;
-  let dataString = '';
-  const regex = /data-id="(.*?)"/;
+export const getEmbedParam = ( input, string ) => {
+  let param = null;
+  let dataString = ''; // eslint-disable-line no-unused-vars
+  const regex = new RegExp( `${string}="(.*?)"` );
 
   if ( input.search( regex ) !== -1 ) {
     const value = input.match( regex );
-    [dataString, postId] = value;
+    [dataString, param] = value;
   }
 
-  return postId;
-};
-
-export const getEmbedPostSite = ( input ) => {
-  let site = null;
-  let dataString = '';
-  const regex = /data-site="(.*?)"/;
-
-  if ( input.search( regex ) !== -1 ) {
-    const value = input.match( regex );
-    [dataString, site] = value;
-  }
-
-  return site;
-};
-
-export const getEmbedLoader = ( input ) => {
-  let loader = null;
-  let dataString = '';
-  const regex = /src="(.*?)"/;
-
-  if ( input.search( regex ) !== -1 ) {
-    const value = input.match( regex );
-    [dataString, loader] = value;
-  }
-
-  return loader;
+  return param;
 };
 
 export const parseEmbedCode = ( input ) => {
   const type = getEmbedType( input );
-  const postId = getEmbedPostId( input );
-  const site = getEmbedPostSite( input );
-  const loader = getEmbedLoader( input );
+  const postId = getEmbedParam( input, 'data-id' );
+  const site = getEmbedParam( input, 'data-site' );
+  const loader = getEmbedParam( input, 'src' );
 
   const shortcode = outputShortcode( type, postId, site, loader );
   return shortcode;
