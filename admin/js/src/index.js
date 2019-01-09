@@ -10,4 +10,4 @@ ReactDOM.render(
   document.getElementById( 'iip-commons-embed-admin' )
 );
 
-module.hot.accept();
+if ( module.hot ) { module.hot.accept(); }

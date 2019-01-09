@@ -4,9 +4,13 @@ namespace Commons_Embed;
 
 class Admin {
 
-  public function enqueue_commons_embed_admin() {
+  public function enqueue_commons_embed_admin( $hook_suffix ) {
     
-    wp_enqueue_script( 'commons-embed-admin-js', COMMONS_EMBED_URL . 'admin/js/dist/commons-embed-admin.min.js', array(), null, true );
+    if( in_array( $hook_suffix, array('post.php', 'post-new.php' ) ) ){
+      
+      wp_enqueue_script( 'commons-embed-admin-js', COMMONS_EMBED_URL . 'admin/js/dist/commons-embed-admin.min.js', array(), null, true );
+
+    }
   }
   
   public function add_commons_metabox() {
